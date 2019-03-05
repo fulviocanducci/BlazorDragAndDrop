@@ -11,3 +11,10 @@ If you like my work on blazor and want to see more open sourced demos please sup
 ![](https://placehold.it/15/00e600/000000?text=+) 
 Please send [email](VakhtangiAbashidze@gmail.com) if you consider to **hire me**.
 ![](https://placehold.it/15/00e600/000000?text=+) 
+
+
+Live [demo](https://lupblazordraganddrop.z20.web.core.windows.net/)
+
+This code seems like verbosed but if we do using only blazor events Mozilla Firefox will not work.
+
+This demo is tested and working well for Chrome, Firefox and Edge. 
