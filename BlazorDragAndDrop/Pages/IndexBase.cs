@@ -27,7 +27,6 @@ namespace BlazorDragAndDrop.Pages
                 });
             }
 
-
             foreach (var item in listDragTarget)
             {
                 for (int i = 0; i < 5; i++)
