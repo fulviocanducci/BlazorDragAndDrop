@@ -9,6 +9,10 @@ namespace BlazorDragAndDrop.Pages
 {
     public class IndexBase : ComponentBase
     {
+
+        [Inject]
+        private IJSRuntime jsRuntimeCurrent { get; set; }
+
         bool firtsLoad = true;
         public List<MyDraggable> listDraggable = new List<MyDraggable>();
 
@@ -69,14 +73,14 @@ namespace BlazorDragAndDrop.Pages
         {
             foreach (var item in listDragTarget)
             {
-                JsInterop.HandleDrop(item.ElementID, item.ID, new DotNetObjectRef(this));
+                JsInterop.HandleDrop(jsRuntimeCurrent, item.ElementID, item.ID, new DotNetObjectRef(this));
             }
         }
 
 
         public void OnMouseDown(UIMouseEventArgs e, MyDraggable item)
         {
-            JsInterop.HandleDrag(item.ElementID, item.ID, new DotNetObjectRef(this));
+            JsInterop.HandleDrag(jsRuntimeCurrent, item.ElementID, item.ID, new DotNetObjectRef(this));
         }
 
         [JSInvokable]

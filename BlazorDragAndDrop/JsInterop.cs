@@ -9,16 +9,16 @@ namespace BlazorDragAndDrop
     public class JsInterop
     {
 
-        internal static Task<bool> HandleDrag(string elementID, int id, DotNetObjectRef dotnetHelper)
+        internal static Task<bool> HandleDrag(IJSRuntime jsRuntime, string elementID, int id, DotNetObjectRef dotnetHelper)
         {
-            return JSRuntime.Current.InvokeAsync<bool>(
+            return jsRuntime.InvokeAsync<bool>(
                 "JsFunctions.handleDragStart", elementID, id, dotnetHelper);
         }
 
 
-        internal static Task<bool> HandleDrop(string elementID, int id, DotNetObjectRef dotnetHelper)
+        internal static Task<bool> HandleDrop(IJSRuntime jsRuntime, string elementID, int id, DotNetObjectRef dotnetHelper)
         {
-            return JSRuntime.Current.InvokeAsync<bool>(
+            return jsRuntime.InvokeAsync<bool>(
                 "JsFunctions.handleDrop", elementID, id, dotnetHelper);
         }
 
